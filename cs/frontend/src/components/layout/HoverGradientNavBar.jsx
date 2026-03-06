@@ -49,9 +49,9 @@ function HoverGradientNavBar() {
         <div className="fixed bottom-0 left-0 w-full md:bottom-6 md:left-1/2 md:-translate-x-1/2 z-50 pointer-events-none">
             <motion.nav
                 className="w-full md:w-fit mx-auto px-2 md:px-3 py-2 md:py-2.5 rounded-none md:rounded-3xl 
-        bg-white/90 dark:bg-[#0a0f1e]/80 backdrop-blur-xl 
+        bg-[var(--bg-elevated)]/90 backdrop-blur-xl 
         border-t md:border border-[var(--border)] 
-        shadow-2xl md:shadow-xl relative pointer-events-auto shadow-black/10 dark:shadow-black/40"
+        shadow-2xl md:shadow-xl relative pointer-events-auto"
                 initial="initial"
                 whileHover="hover"
             >
