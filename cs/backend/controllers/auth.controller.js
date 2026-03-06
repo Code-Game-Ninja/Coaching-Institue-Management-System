@@ -18,13 +18,15 @@ export const login = asyncHandler(async (req, res) => {
     return res.status(401).json({ success: false, message: 'Invalid email or password' });
   }
 
-  const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN || '24h',
+  const expiresIn = process.env.JWT_EXPIRES_IN ? process.env.JWT_EXPIRES_IN.trim() : '24h';
+
+  const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET.trim(), {
+    expiresIn,
   });
 
   successResponse(res, {
     token,
-    expiresIn: process.env.JWT_EXPIRES_IN || '24h',
+    expiresIn,
     admin: { _id: admin._id, name: admin.name, email: admin.email },
   }, 'Login successful');
 });
