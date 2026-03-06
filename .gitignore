@@ -103,3 +103,9 @@ dist
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# AI / System folders & files
+.agent/
+.gemini/
+CODEBASE.md
+coaching-institute-dms.md
